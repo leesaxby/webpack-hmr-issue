@@ -19,7 +19,7 @@ module.exports = {
         port: 9999,
         hot: true,
         historyApiFallback: true,
-        clientLogLevel: 'error'
+        clientLogLevel: 'info'
     },
     module: {
         rules: [{
