@@ -23,11 +23,11 @@ if (module.hot) {
 ```
 With the above code HMR works as expected.
 
-But if you add an extention to the module name...
+But if you add a file extension to either the main import **or** the accept module name...
 ```
 module.hot.accept('./App.js', () => { render(App); });
 ```
-The browser console reports that a module has been changed i.e:
+The browser console reports that the module has been updated i.e:
 ```
 [WDS] App hot update...
 [HMR] Checking for updates on the server...
@@ -35,4 +35,4 @@ The browser console reports that a module has been changed i.e:
 [HMR]  - ./src/App.js
 [HMR] App is up to date.
 ```
-But doesn't actually import the updated module or update the browser.
+But will only fire the `accept` callback once, returning the old (unchanged) version of the module, and doesn't actually import the updated module or update the browser with the changes.
