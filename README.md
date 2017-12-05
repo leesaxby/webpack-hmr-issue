@@ -36,3 +36,9 @@ The browser console reports that the module has been updated i.e:
 [HMR] App is up to date.
 ```
 But will only fire the `accept` callback once, returning the old (unchanged) version of the module, and doesn't actually import the updated module or update the browser with the changes.
+
+If you don't provide a name or callback to `accept`...
+```
+module.hot.accept();
+```
+HMR works as expected.
